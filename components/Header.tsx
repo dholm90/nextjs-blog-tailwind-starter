@@ -1,26 +1,43 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { Icon } from './Icon'
-
+import ExportedImage from 'next-image-export-optimizer'
+import Image from 'next/image'
+import logo from '../public/media/logo.png'
 const menuItemClasses =
   'w-full flex items-center gap-3 p-3 px-6 text-sm tracking-wide text-slate-700 dark:text-slate-700 hover:text-slate-800 dark:hover:text-slate-950 hover:font-semibold transition-colors transition-all border-b border-b-slate-200 dark:border-b-slate-300 hover:bg-slate-100 dark:hover:bg-white'
 
-const iconClasses = 'size-4 opacity-70'
+  import type { ImageLoaderProps } from 'next/image'
+
+  const iconClasses = 'size-4 opacity-70'
+  
+  const imageLoader = ({ src, width, quality }: ImageLoaderProps): string => {
+    return `./${src}?w=${width}&q=${quality || 75}`
+  }
+
 
 export default function Header() {
   const [navbar, setNavbar] = useState(false)
 
   return (
-    <header className="flex p-4 sm:p-6 fixed w-full z-10 pointer-events-none">
+    <header className="flex p-4 sm:p-6 fixed w-full z-10 pointer-events-none bg-white">
       <nav className="flex w-full justify-between items-center">
         <Link
           href="/"
           className="font-bold opacity-80 hover:opacity-100 transition-opacity rounded outline-offset-8 pointer-events-auto"
         >
-          Frugal Mom Life
+          <Image
+          loader={imageLoader}
+          src={logo}
+          alt="Frugal Mom Life Logo"
+          width={100}
+          height={75}
+          className="position-fixed"
+          
+        />
         </Link>
 
-        <div className="absolute right-0 top-4 sm:top-5 group pointer-events-auto">
+        <div className="absolute right-0 sm:top-5 md:top-7 group pointer-events-auto">
           <button
             className="p-2 text-xs uppercase font-bold rounded-lg absolute right-4 sm:right-6 z-10 bg-white text-slate-700 dark:bg-slate-300 shadow-md hover:shadow-lg transition-shadow"
             type="button"
@@ -57,7 +74,7 @@ export default function Header() {
                   className={menuItemClasses}
                 >
                   <Icon name="blog" className={iconClasses} />
-                  Code Blog
+                  Finance Tips
                 </Link>
               </li>
               <li>
@@ -77,7 +94,7 @@ export default function Header() {
                   className={menuItemClasses}
                 >
                   <Icon name="inspiration" className={iconClasses} />
-                  Inspiration
+                  Mom Life
                 </Link>
               </li>
               <li>
@@ -87,7 +104,7 @@ export default function Header() {
                   className={menuItemClasses}
                 >
                   <Icon name="podcasts" className={iconClasses} />
-                  Podcasts
+                  Living With Intention
                 </Link>
               </li>
               <li>
@@ -97,7 +114,7 @@ export default function Header() {
                   className={menuItemClasses}
                 >
                   <Icon name="tools" className={iconClasses} />
-                  Tools
+                  Growing & Cooking
                 </Link>
               </li>
               <li>

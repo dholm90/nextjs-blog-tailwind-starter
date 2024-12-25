@@ -100,7 +100,7 @@ export default function Home() {
           <div className="flex justify-between items-end mb-4">
             <h2 className="text-2xl sm:text-3xl font-bold flex items-center gap-3">
               <Icon name="blog" className="size-6 sm:size-8 opacity-60" />
-              <span>Code Blog</span>
+              <span>Finance Tips</span>
             </h2>
             <Link href="/blog">View all &rarr;</Link>
           </div>
@@ -118,7 +118,7 @@ export default function Home() {
                 name="inspiration"
                 className="size-6 sm:size-8 opacity-60"
               />
-              <span>Inspiration</span>
+              <span>Mom Life</span>
             </h2>
             <Link href="/inspiration">View all &rarr;</Link>
           </div>
@@ -133,7 +133,7 @@ export default function Home() {
           <div className="flex justify-between items-end mb-4">
             <h2 className="text-2xl sm:text-3xl font-bold flex items-center gap-3">
               <Icon name="podcasts" className="size-6 sm:size-8 opacity-60" />
-              <span>Podcasts</span>
+              <span>Living With Intention</span>
             </h2>
             <Link href="/podcasts">View all &rarr;</Link>
           </div>
@@ -148,7 +148,7 @@ export default function Home() {
           <div className="flex justify-between items-end mb-4">
             <h2 className="text-2xl sm:text-3xl font-bold flex items-center gap-3">
               <Icon name="tools" className="size-6 sm:size-8 opacity-60" />
-              <span>Tools</span>
+              <span>Growing & Cooking</span>
             </h2>
             <Link href="/tools">View all &rarr;</Link>
           </div>
