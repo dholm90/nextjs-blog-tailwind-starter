@@ -12,7 +12,7 @@ const menuItemClasses =
   const iconClasses = 'size-4 opacity-70'
   
   const imageLoader = ({ src, width, quality }: ImageLoaderProps): string => {
-    return `http://localhost:3000/${src}?w=${width}&q=${quality || 75}`
+    return `https://frugalmomlife.com/${src}?w=${width}&q=${quality || 75}`
   }
 
 
