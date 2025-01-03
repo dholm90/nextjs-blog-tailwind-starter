@@ -12,7 +12,7 @@ const menuItemClasses =
   const iconClasses = 'size-4 opacity-70'
   
   const imageLoader = ({ src, width, quality }: ImageLoaderProps): string => {
-    return `./${src}?w=${width}&q=${quality || 75}`
+    return `http://localhost:3000/${src}?w=${width}&q=${quality || 75}`
   }
 
 
@@ -24,22 +24,42 @@ export default function Header() {
       <nav className="flex w-full justify-between items-center">
         <Link
           href="/"
-          className="font-bold opacity-80 hover:opacity-100 transition-opacity rounded outline-offset-8 pointer-events-auto"
+          className="font-bold md:w-48 pointer-events-auto"
         >
+          
           <Image
           loader={imageLoader}
           src={logo}
           alt="Frugal Mom Life Logo"
+          style={{
+            width: '160px',
+            height: 'auto',
+          }}
           width={100}
           height={75}
-          className="position-fixed"
-          
+          className="position-fixed h-auto w-50"
+          priority= {true}
         />
+        {/* <Image
+          loader={imageLoader}
+          src={logo}
+          alt="Frugal Mom Life Logo"
+          style={{
+            width: '100%',
+            height: 'auto',
+          }}
+          width={0}
+          height={0}
+          // className=""
+          
+          loading="eager"
+          priority= {true}
+        /> */}
         </Link>
 
-        <div className="absolute right-0 sm:top-5 md:top-7 group pointer-events-auto">
+        <div className="align-middle group pointer-events-auto">
           <button
-            className="p-2 text-xs uppercase font-bold rounded-lg absolute right-4 sm:right-6 z-10 bg-white text-slate-700 dark:bg-slate-300 shadow-md hover:shadow-lg transition-shadow"
+            className="p-2 align-middle text-xs uppercase font-bold rounded-lg right-4 sm:right-6 z-10 bg-white text-slate-700 dark:bg-slate-300 shadow-md hover:shadow-lg transition-shadow"
             type="button"
             onClick={() => setNavbar(!navbar)}
           >
