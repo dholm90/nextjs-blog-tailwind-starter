@@ -128,7 +128,7 @@ collections:
           label: 'Template Key',
           name: 'templateKey',
           widget: 'hidden',
-          default: 'inspiration',
+          default: 'momLife',
         }
       - { label: 'Title', name: 'title', widget: string }
       - { label: 'Featured', name: 'featured', widget: boolean, default: false }
@@ -147,7 +147,7 @@ collections:
         }
       - { label: 'Tags', name: 'tags', widget: 'list' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      
+
   - name: 'podcasts'
     label: 'Podcasts'
     label_singular: 'Podcast'
