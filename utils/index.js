@@ -14,8 +14,8 @@ export function pageCount(number) {
 export function formatDate(date) {
   const options = {
     dateStyle: 'medium',
-    timeZone: 'Portugal',
+    timeZone: 'EST',
   }
 
-  return new Intl.DateTimeFormat('en-UK', options).format(date)
+  return new Intl.DateTimeFormat('en-US', options).format(date)
 }
