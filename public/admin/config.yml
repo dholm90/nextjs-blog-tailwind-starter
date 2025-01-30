@@ -112,6 +112,42 @@ collections:
       - { label: 'Tags', name: 'tags', widget: 'list' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
 
+  - name: 'momLife'
+    label: 'Mom Life'
+    folder: 'content/momLife'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{title}}'
+    extension: mdx
+    format: frontmatter
+    view_groups:
+      - label: Year
+        field: date
+        pattern: \d{4}
+    fields:
+      - {
+          label: 'Template Key',
+          name: 'templateKey',
+          widget: 'hidden',
+          default: 'inspiration',
+        }
+      - { label: 'Title', name: 'title', widget: string }
+      - { label: 'Featured', name: 'featured', widget: boolean, default: false }
+      - {
+          label: 'Featured Image',
+          name: 'image',
+          widget: 'image',
+          choose_url: false,
+        }
+      - {
+          label: 'Body',
+          name: 'body',
+          widget: 'markdown',
+          sanitize_preview: true,
+          minimal: true,
+        }
+      - { label: 'Tags', name: 'tags', widget: 'list' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      
   - name: 'podcasts'
     label: 'Podcasts'
     label_singular: 'Podcast'
